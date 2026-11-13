@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>ХинкБери — Халяльный фастфуд в Москве</title>
+  <base href="/"/>
+  <meta name="yandex-verification" content="b3a004fc9c9ddaeb" />
+  <link rel="stylesheet" href="css/style.css?v=4.4"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="img/logo.png" type="image/png" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/Главная" class="logo">
+        <div class="logo__text">
+          <span class="logo__name">ХинкБери</span>
+          <span class="logo__sub">Халяль · Фастфуд · Кофе</span>
+        </div>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/Главная" class="nav__link nav__link--active">Главная</a>
+        <a href="/Меню" class="nav__link">Меню</a>
+        <a href="#reviews" class="nav__link">Отзывы</a>
+        <a href="#contacts" class="nav__link">Контакты</a>
+
+        <div class="nav__mobile-actions" id="mobileNavActions">
+          <div id="mobileGuestActions">
+            <button class="btn btn--gold btn--full btn--md" id="mobileLoginBtn">Войти</button>
+            <button class="btn btn--gold btn--full btn--md" id="mobileRegisterBtn" style="margin-top: 8px;">Регистрация (+100 Б)</button>
+          </div>
+          <div id="mobileUserActions" style="display: none;">
+            <button class="btn btn--gold btn--full btn--md" id="mobileProfileBtn">Личный кабинет (<span id="mobilePointsText">100 Б</span>)</button>
+            <button class="btn btn--outline btn--full btn--md" id="mobileLogoutBtn" style="margin-top: 8px;">Выйти</button>
+          </div>
+        </div>
+      </nav>
+      <div class="header__actions">
+        <button class="loyalty-pill" id="loyaltyPill" title="Ваши баллы" style="display: none;">
+          <span class="loyalty-pill__dot"></span>
+          <span id="loyaltyPillText">100 Б</span>
+        </button>
+        <button class="btn btn--gold btn--sm header__auth-btn" id="loginBtn">Войти</button>
+        <button class="btn btn--gold btn--sm header__auth-btn" id="registerBtn">Регистрация</button>
+      </div>
+      <button class="burger-btn" id="burgerBtn" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- PAGE WRAPPER FOR SEAMLESS ANIMATION -->
+  <div class="page-wrapper" id="pageWrapper">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__watermark">HinkBerry</div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="hero__badge"><span class="halal-dot"></span>Хорошее место для вас и ваших близких</div>
+          <h1 class="hero__title">Новое <span class="hero__title--green">халяльное</span><br/>заведение</h1>
+          <p class="hero__desc">Вкусный кофе и десерты, сочная шаурма и прочее. Только халяль, только свежее.</p>
+          <div class="hero__cta">
+            <a href="/Меню" class="btn btn--gold btn--lg">
+              <img src="img/menu-icon.svg" alt="Меню" class="btn-icon" width="20" height="20" />
+              Смотреть меню
+            </a>
+          <a href="#about" class="btn btn--gold btn--lg">
+            <img src="img/about-icon.svg" alt="О нас" class="btn-icon" width="20" height="20" />
+            О нас
+          </a>
+          <a href="https://yandex.ru/maps/213/moscow/?ll=37.578177%2C55.570653&mode=poi&poi%5Bpoint%5D=37.578046%2C55.570706&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D169433331462&tab=gallery&z=21" target="_blank" rel="noopener noreferrer" class="btn btn--gold btn--lg btn--maps">
+            <img src="img/yandex-maps.png" alt="Яндекс Карты" class="btn-icon" width="20" height="20" />
+            Мы в Яндекс Картах
+          </a>
+        </div>
+        <div class="hero__address">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Старокачаловская ул., вл5А, Москва
+        </div>
+      </div>
+      <div class="hero__image">
+        <img src="img/hero-burger.jpg" alt="Сочный бургер ХинкБери" class="hero__img" />
+        <div class="hero__image-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <div class="about__text">
+        <div class="section-label">О нас</div>
+        <h2 class="section-title">ХинкБери —<br/>идеальный состав блюд</h2>
+        <p class="about__desc">Мы готовим по-настоящему, как дома. Никаких искусственных красителей, консервантов и лишней химии — только свежее халяльное мясо, отборные овощи и натуральные ингредиенты. Чистый вкус, в котором вы уверены.</p>
+        <ul class="about__features">
+          <li><span class="feature-icon">✓</span> Свежие ингредиенты каждый день</li>
+          <li><span class="feature-icon">✓</span> Бургеры, шаурма, стрипсы, роллы</li>
+          <li><span class="feature-icon">✓</span> Горячий и холодный кофе, лимонады, коктейли</li>
+        </ul>
+        <a href="/Меню" class="btn btn--gold btn--md">Полное меню</a>
+      </div>
+      <div class="about__stats">
+        <div class="stat-card"><div class="stat-card__num">4.7</div><div class="stat-card__label">Рейтинг на Яндекс.Картах</div><div class="stat-stars">★★★★★</div></div>
+        <div class="stat-card"><div class="stat-card__num">100+</div><div class="stat-card__label">Довольных клиентов</div></div>
+        <div class="stat-card stat-card--halal">
+          <img src="img/halal-badge.png?v=2" alt="Халяль" class="stat-card__badge-img" width="56" height="56" />
+          <div class="stat-card__label">Халяль</div>
+        </div>
+        <div class="stat-card"><div class="stat-card__num">25+</div><div class="stat-card__label">Позиций в меню</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR DISHES -->
+  <section class="popular">
+    <div class="container">
+      <div class="section-header">
+        <div><div class="section-label">Меню</div><h2 class="section-title">Хиты ХинкБери</h2></div>
+        <a href="/Меню" class="btn btn--outline btn--sm">Всё меню →</a>
+      </div>
+      <div class="dishes-grid">
+        <div class="dish-card">
+          <div class="dish-card__img-wrap">
+            <img src="img/yandex/burger_beef.png" alt="Бургер Говядина" class="dish-card__img-photo" loading="lazy" />
+            <div class="dish-card__badge">Хит</div>
+          </div>
+          <div class="dish-card__body">
+            <h3 class="dish-card__name">Бургер Говядина</h3>
+            <p class="dish-card__desc">100% сочная халяль говядина на углях, чеддер и соус BBQ</p>
+            <div class="dish-card__footer"><span class="dish-card__price">490 ₽</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <div class="dish-card__img-wrap">
+            <img src="img/yandex/wings.jpg" alt="Острые крылья" class="dish-card__img-photo" loading="lazy" />
+          </div>
+          <div class="dish-card__body">
+            <h3 class="dish-card__name">Острые крылья</h3>
+            <p class="dish-card__desc">Хрустящие крылышки в огненном фирменном маринаде</p>
+            <div class="dish-card__footer"><span class="dish-card__price">от 210 ₽</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <div class="dish-card__img-wrap">
+            <img src="img/yandex/caesar_roll.jpg" alt="Цезарь Ролл" class="dish-card__img-photo" loading="lazy" />
+            <div class="dish-card__badge dish-card__badge--new">Топ</div>
+          </div>
+          <div class="dish-card__body">
+            <h3 class="dish-card__name">Цезарь Ролл</h3>
+            <p class="dish-card__desc">Куриное филе, романо, соус цезарь, пармезан в лаваше</p>
+            <div class="dish-card__footer"><span class="dish-card__price">290 ₽</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <div class="dish-card__img-wrap">
+            <img src="img/yandex/shawarma_chicken.jpg" alt="Шаурма с Курицей" class="dish-card__img-photo" loading="lazy" />
+          </div>
+          <div class="dish-card__body">
+            <h3 class="dish-card__name">Шаурма с Курицей</h3>
+            <p class="dish-card__desc">Сочная курица на вертеле со свежими овощами и чесночным соусом</p>
+            <div class="dish-card__footer"><span class="dish-card__price">300 ₽</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOYALTY BANNER -->
+  <section class="loyalty-banner">
+    <div class="container loyalty-banner__inner">
+      <div class="loyalty-banner__text">
+        <div class="section-label section-label--dark">Программа лояльности</div>
+        <h2 class="loyalty-banner__title">Копи баллы —<br/>получай выгоду</h2>
+        <p class="loyalty-banner__desc">Каждые 5 рублей = 1 балл. Дарим 100 приветственных баллов сразу после регистрации!</p>
+        <button class="btn btn--gold btn--lg" id="loyaltyRegBtn">Зарегистрироваться (+100 Б)</button>
+      </div>
+      <div class="loyalty-banner__visual">
+        <div class="loyalty-card" id="loyaltyCard">
+          <div class="loyalty-card__top">
+            <div class="loyalty-card__chip"></div>
+            <span class="loyalty-card__brand">ХинкБери</span>
+          </div>
+          <div class="loyalty-card__body">
+            <div class="loyalty-card__label">Баланс</div>
+            <div class="loyalty-card__balance">
+              <span class="loyalty-card__num" id="bannerPointsNum">0</span>
+              <span class="loyalty-card__curr">баллов</span>
+            </div>
+          </div>
+          <div class="loyalty-card__footer">
+            <div class="loyalty-card__holder">
+              <div class="loyalty-card__sublabel">Владелец карты</div>
+              <div class="loyalty-card__name" id="bannerCardName">Тут будет ваше имя</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-label">Отзывы</div>
+          <h2 class="section-title">Что говорят гости</h2>
+        </div>
+        <a href="https://yandex.ru/maps/org/169433331462/reviews/" target="_blank" rel="noopener noreferrer" class="reviews__rating" style="text-decoration:none;">
+          <span class="reviews__score">4.7</span>
+          <div>
+            <div class="reviews__stars">★★★★★</div>
+            <span class="reviews__count">13 отзывов на Яндекс Картах ↗</span>
+          </div>
+        </a>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">А</div>
+            <div>
+              <div class="review-card__name">Адам Дулушов</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">«Недавно зашел попробовать — в целом остался доволен. Заказывал бургер, картошку и напиток. Бургер был свежий, котлета сочная, овощи хрустящие. Картошка горячая и хорошо приготовлена. Заказ сделали довольно быстро, персонал вежливый и приветливый. Видно, что место только открылось, но впечатление осталось хорошее.»</p>
+          <div class="review-card__date">Реальный отзыв с Яндекс Карт</div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">Э</div>
+            <div>
+              <div class="review-card__name">Сепиева Эвелина</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">«Сегодня с подругами зашли в это замечательное заведение и остались в полном восторге! Теперь мы всегда будем приходить сюда за шикарным кофе. А какая еда — просто невероятно! Персонал очень добрый и отзывчивый, все подсказали и порекомендовали свои любимые блюда. Всё было супер! Желаю этому месту побольше клиентов — все должны попробовать такую вкуснятину!»</p>
+          <div class="review-card__date">Реальный отзыв с Яндекс Карт</div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">И</div>
+            <div>
+              <div class="review-card__name">Инкогнито 0053</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">«Там кофе обалденный, с урбечом, я его по Москве искала, наконец нашла. И очень вкусные крылышки. Теперь знаю, куда можно сходить вкусно и халяль поесть и кофе легендарный выпить.»</p>
+          <div class="review-card__date">Реальный отзыв с Яндекс Карт</div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">М</div>
+            <div>
+              <div class="review-card__name">Мадина</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">«Очень уютное место, тихо спокойно, можно посидеть и поработать, заодно халяльные бургеры покушать 😍😍😍»</p>
+          <div class="review-card__date">Реальный отзыв с Яндекс Карт</div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">З</div>
+            <div>
+              <div class="review-card__name">Залина З.</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">«Очень уютное место, а главное, очень вкусно 😋 крылышки просто объедение. Всем советую посетить это место и попробовать по-настоящему вкусную еду.»</p>
+          <div class="review-card__date">Реальный отзыв с Яндекс Карт</div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-card__avatar">С</div>
+            <div>
+              <div class="review-card__name">Саида Омарова</div>
+              <div class="review-card__stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-card__text">«Была в этом заведении, пила кофе с урбечом холодный — ну ооооочень было вкусно! И так же перекусила стрипс-роллом 🔥»</p>
+          <div class="review-card__date">Реальный отзыв с Яндекс Карт</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="contacts" id="contacts">
+    <div class="container contacts__inner">
+      <div class="contacts__info">
+        <div class="section-label">Контакты</div>
+        <h2 class="section-title">Как нас найти</h2>
+        <div class="contacts__list">
+          <div class="contact-item">
+            <div class="contact-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="contact-item__label">Адрес</div><div class="contact-item__value">Старокачаловская ул., вл5А, Москва</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div><div class="contact-item__label">Режим работы</div><div class="contact-item__value">Пн–Вс: 10:00 — 23:00</div></div>
+          </div>
+        </div>
+        <a href="https://yandex.ru/maps/?rtext=~55.570706,37.578046" target="_blank" class="btn btn--gold btn--md">Открыть на карте</a>
+      </div>
+      <div class="contacts__map">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=37.578046%2C55.570706&z=17&pt=37.578046%2C55.570706%2Cpm2grm" width="100%" height="360" frameborder="0" allowfullscreen="true" style="border-radius: var(--radius-lg); border: 1px solid rgba(201, 168, 76, 0.2); display: block; box-shadow: var(--shadow);"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#hero" class="logo">
+          <div class="logo__text">
+            <span class="logo__name">ХинкБери</span>
+          </div>
+        </a>
+        <p class="footer__tagline">Вкусно. Сытно. Для тебя.</p>
+      </div>
+      <nav class="footer__nav"><a href="/Главная" class="footer__link">Главная</a><a href="/Меню" class="footer__link">Меню</a><a href="#reviews" class="footer__link">Отзывы</a><a href="#contacts" class="footer__link">Контакты</a></nav>
+      <div class="footer__address"><small>Старокачаловская ул., вл5А, Москва</small></div>
+    </div>
+    <div class="footer__bottom"><div class="container"><span>© 2025 ХинкБери. Все права защищены.</span></div></div>
+  </footer>
+
+  </div><!-- /pageWrapper -->
+
+  <!-- AUTH MODAL -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal" role="dialog">
+      <button class="modal__close" id="modalClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__logo">
+        <span>ХинкБери</span>
+      </div>
+      <div class="modal__tabs"><button class="modal__tab modal__tab--active" data-tab="login">Вход</button><button class="modal__tab" data-tab="register">Регистрация</button></div>
+      <form class="auth-form" id="loginForm">
+        <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="your@email.com" id="loginEmail" required/></div>
+        <div class="form-group"><label class="form-label">Пароль</label><div class="form-input-wrap"><input type="password" class="form-input" placeholder="••••••••" id="loginPassword" required/><button type="button" class="form-input-eye" onclick="togglePassword('loginPassword',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
+        <button type="submit" class="btn btn--gold btn--full btn--lg">Войти</button>
+        <p class="form-hint">Нет аккаунта? <a href="#" class="form-link" data-switch="register">Зарегистрироваться (+100 Б)</a></p>
+      </form>
+      <form class="auth-form auth-form--hidden" id="registerForm">
+        <div class="form-group"><label class="form-label">Имя</label><input type="text" class="form-input" placeholder="Ваше имя" id="regName" required/></div>
+        <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="your@email.com" id="regEmail" required/></div>
+        <div class="form-group"><label class="form-label">Пароль</label><div class="form-input-wrap"><input type="password" class="form-input" placeholder="Минимум 6 символов" id="regPassword" required minlength="6"/><button type="button" class="form-input-eye" onclick="togglePassword('regPassword',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
+        <button type="submit" class="btn btn--gold btn--full btn--lg">Создать аккаунт (+100 Б)</button>
+        <p class="form-hint">Уже есть аккаунт? <a href="#" class="form-link" data-switch="login">Войти</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- PROFILE MODAL -->
+  <div class="modal-overlay" id="profileModal">
+    <div class="modal modal--profile" role="dialog">
+      <button class="modal__close" id="profileClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="profile-header"><div class="profile-avatar" id="profileAvatar">А</div><div class="profile-info"><div class="profile-name" id="profileName">Имя</div><div class="profile-email" id="profileEmail">email</div></div></div>
+      <div class="profile-points-card">
+        <div class="profile-points-card__label">Ваши баллы</div>
+        <div class="profile-points-card__num" id="profilePoints">100</div>
+        <div class="profile-points-card__sub">5 ₽ = 1 балл · Дарим за каждый заказ</div>
+        <div class="profile-points-bar"><div class="profile-points-bar__fill" id="pointsBarFill" style="width:50%"></div></div>
+        <div class="profile-points-next">До следующего уровня: <span id="pointsToNext">100</span> баллов</div>
+      </div>
+      <div class="profile-history">
+        <div class="profile-history__title">История начислений</div>
+        <div class="profile-history__empty" id="historyEmpty">Посетите нас и получайте баллы за каждый заказ!</div>
+        <ul class="profile-history__list" id="historyList"></ul>
+      </div>
+      <button class="btn btn--outline btn--full btn--md" id="logoutBtn">Выйти из аккаунта</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js?v=4.2"></script>
+</body>
+</html>

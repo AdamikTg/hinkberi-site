@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>Меню — ХинкБери</title>
+  <base href="/"/>
+  <link rel="stylesheet" href="css/style.css?v=4.4"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="img/logo.png" type="image/png" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/Главная" class="logo">
+        <div class="logo__text">
+          <span class="logo__name">ХинкБери</span>
+          <span class="logo__sub">Халяль · Фастфуд · Кофе</span>
+        </div>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="/Главная" class="nav__link">Главная</a>
+        <a href="/Меню" class="nav__link nav__link--active">Меню</a>
+        <a href="/Главная#reviews" class="nav__link">Отзывы</a>
+        <a href="/Главная#contacts" class="nav__link">Контакты</a>
+
+        <div class="nav__mobile-actions" id="mobileNavActions">
+          <div id="mobileGuestActions">
+            <button class="btn btn--gold btn--full btn--md" id="mobileLoginBtn">Войти</button>
+            <button class="btn btn--gold btn--full btn--md" id="mobileRegisterBtn" style="margin-top: 8px;">Регистрация (+100 Б)</button>
+          </div>
+          <div id="mobileUserActions" style="display: none;">
+            <button class="btn btn--gold btn--full btn--md" id="mobileProfileBtn">Личный кабинет (<span id="mobilePointsText">100 Б</span>)</button>
+            <button class="btn btn--outline btn--full btn--md" id="mobileLogoutBtn" style="margin-top: 8px;">Выйти</button>
+          </div>
+        </div>
+      </nav>
+      <div class="header__actions">
+        <button class="loyalty-pill" id="loyaltyPill" title="Ваши баллы" style="display: none;">
+          <span class="loyalty-pill__dot"></span>
+          <span id="loyaltyPillText">100 Б</span>
+        </button>
+        <button class="btn btn--gold btn--sm header__auth-btn" id="loginBtn">Войти</button>
+        <button class="btn btn--gold btn--sm header__auth-btn" id="registerBtn">Регистрация</button>
+      </div>
+      <button class="burger-btn" id="burgerBtn" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- PAGE WRAPPER FOR SEAMLESS ANIMATION -->
+  <div class="page-wrapper" id="pageWrapper">
+
+  <!-- MENU HERO -->
+  <section class="menu-hero">
+    <div class="container">
+      <h1 class="menu-hero__title">Наше Меню</h1>
+      <p class="menu-hero__desc">*некоторые блюда могут не совпадать с реальностью, но сама идея точно такая же*</p>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section">
+    <div class="container">
+      <div class="menu-tabs">
+        <button class="menu-tab menu-tab--active" data-cat="fastfood">Фастфуд</button>
+        <button class="menu-tab" data-cat="drinks">Напитки</button>
+        <button class="menu-tab" data-cat="coffee">Кофе</button>
+      </div>
+
+      <!-- FASTFOOD -->
+      <div class="menu-cat" id="cat-fastfood">
+
+        <!-- Бургеры -->
+        <div class="menu-cat-section">
+          <h2 class="menu-cat-title">Бургеры</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/burger_chicken.jpg" alt="Бургер Куриный" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Бургер Куриный</div>
+                <div class="menu-item__desc">Хрустящая куриная котлета, свежий салат, огурцы, томаты и фирменный соус</div>
+              </div>
+              <div class="menu-item__price">350 ₽</div>
+            </div>
+
+            <div class="menu-item menu-item--featured">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/burger_beef.png" alt="Бургер Говядина" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Бургер Говядина <span class="menu-item__tag">Хит</span></div>
+                <div class="menu-item__desc">100% сочная халяль говядина на углях, расплавленный чеддер, карамелизованный лук и соус BBQ</div>
+              </div>
+              <div class="menu-item__price">490 ₽</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Роллы и Шаурма -->
+        <div class="menu-cat-section">
+          <h2 class="menu-cat-title">Роллы и Шаурма</h2>
+          <div class="menu-items">
+            <div class="menu-item menu-item--featured">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/caesar_roll.jpg" alt="Цезарь Ролл" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Цезарь Ролл <span class="menu-item__tag">Топ</span></div>
+                <div class="menu-item__desc">Нежное куриное филе, хрустящий романо, сыр пармезан и авторский соус цезарь в лаваше</div>
+              </div>
+              <div class="menu-item__price">290 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/strip_roll.jpg" alt="Стрипс Ролл" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Стрипс Ролл</div>
+                <div class="menu-item__desc">Куриные стрипсы в панировке, маринованные огурцы, томаты и горчичный соус</div>
+              </div>
+              <div class="menu-item__price">300 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/shawarma_chicken.jpg" alt="Шаурма с Курицей" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Шаурма с Курицей</div>
+                <div class="menu-item__desc">Курица на вертеле, хрустящая капуста, свежие огурцы, спелые томаты и чесночный соус</div>
+              </div>
+              <div class="menu-item__price">300 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/shawarma_chicken.jpg" alt="Шаурма Говядина" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Шаурма Говядина</div>
+                <div class="menu-item__desc">Отборная халяль говядина, хрустящие овощи, маринованный лук и фирменный кавказский соус</div>
+              </div>
+              <div class="menu-item__price">350 ₽</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Крылья и Стрипсы -->
+        <div class="menu-cat-section">
+          <h2 class="menu-cat-title">Крылья и Стрипсы</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/wings.jpg" alt="Острые Крылья" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Острые Крылья</div>
+                <div class="menu-item__desc">Хрустящие крылышки в огненном маринаде</div>
+                <div class="menu-item__sizes"><span>S (5 шт) — 210 ₽</span><span>M (10 шт) — 370 ₽</span><span>L (15 шт) — 450 ₽</span></div>
+              </div>
+              <div class="menu-item__price">от 210 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/strips.jpg" alt="Стрипсы" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Стрипсы</div>
+                <div class="menu-item__desc">Отборное куриное филе в золотистой хрустящей панировке</div>
+                <div class="menu-item__sizes"><span>3 шт — 210 ₽</span><span>6 шт — 310 ₽</span><span>9 шт — 450 ₽</span></div>
+              </div>
+              <div class="menu-item__price">от 210 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/nuggets.jpg" alt="Наггетсы" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Наггетсы</div>
+                <div class="menu-item__desc">Классические нежные куриные наггетсы</div>
+                <div class="menu-item__sizes"><span>4 шт — 120 ₽</span><span>8 шт — 150 ₽</span><span>12 шт — 290 ₽</span></div>
+              </div>
+              <div class="menu-item__price">от 120 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/cheese_sticks.jpg" alt="Сырные Палочки" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Сырные Палочки</div>
+                <div class="menu-item__desc">Тянущийся сыр моцарелла в хрустящей корочке</div>
+                <div class="menu-item__sizes"><span>3 шт — 170 ₽</span><span>6 шт — 330 ₽</span><span>12 шт — 660 ₽</span></div>
+              </div>
+              <div class="menu-item__price">от 170 ₽</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Картофель -->
+        <div class="menu-cat-section">
+          <h2 class="menu-cat-title">Картофель</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/fries.jpg" alt="Картофель Фри" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Картофель Фри</div>
+                <div class="menu-item__desc">Горячий, хрустящий и золотистый картофель с солью</div>
+                <div class="menu-item__sizes"><span>Средний — 170 ₽</span><span>Большой — 250 ₽</span></div>
+              </div>
+              <div class="menu-item__price">от 170 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/potato_wedges.jpg" alt="Картофель по-деревенски" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Картофель по-деревенски</div>
+                <div class="menu-item__desc">Ароматные дольки картофеля с паприкой и травами</div>
+                <div class="menu-item__sizes"><span>Средний — 210 ₽</span><span>Большой — 270 ₽</span></div>
+              </div>
+              <div class="menu-item__price">от 210 ₽</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Фирменные соусы -->
+        <div class="menu-cat-section">
+          <h2 class="menu-cat-title">Фирменные Соусы</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/sauce_cheese.jpg" alt="Соусы" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Соус на выбор</div>
+                <div class="menu-item__desc">Сырный, Барбекю, Кетчуп, Кисло-сладкий</div>
+                <div class="menu-item__sizes"><span>Порция 25г</span></div>
+              </div>
+              <div class="menu-item__price">40 ₽</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DRINKS -->
+      <div class="menu-cat menu-cat--hidden" id="cat-drinks">
+
+        <div class="menu-cat-section">
+          <h2 class="menu-cat-title">Газировка и Соки</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/kinza_cola.jpg" alt="Кинза Кола" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Напиток Кинза Кола</div>
+                <div class="menu-item__desc">Освежающая классическая кола в бутылке</div>
+                <div class="menu-item__sizes"><span>0.5л</span></div>
+              </div>
+              <div class="menu-item__price">145 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/kinza_cola_zero.jpg" alt="Кинза Кола без сахара" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Кинза Кола без сахара</div>
+                <div class="menu-item__desc">0 калорий, освежающий вкус колы</div>
+                <div class="menu-item__sizes"><span>0.5л</span></div>
+              </div>
+              <div class="menu-item__price">145 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/juice_orange.jpg" alt="Сок Рич Апельсин" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Сок Rich Апельсин</div>
+                <div class="menu-item__desc">100% натуральный апельсиновый сок</div>
+                <div class="menu-item__sizes"><span>0.3л</span></div>
+              </div>
+              <div class="menu-item__price">160 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/juice_cherry.jpg" alt="Сок Рич Вишня" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Сок Rich Вишня</div>
+                <div class="menu-item__desc">Насыщенный вишневый нектар</div>
+                <div class="menu-item__sizes"><span>0.3л</span></div>
+              </div>
+              <div class="menu-item__price">160 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/juice_peach.jpg" alt="Сок Рич Персик" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Сок Rich Персик</div>
+                <div class="menu-item__desc">Бархатистый персиковый нектар с мякотью</div>
+                <div class="menu-item__sizes"><span>0.3л</span></div>
+              </div>
+              <div class="menu-item__price">160 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/juice_apple.jpg" alt="Сок Рич Яблоко" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Сок Rich Яблоко</div>
+                <div class="menu-item__desc">Осветленный яблочный сок без добавления сахара</div>
+                <div class="menu-item__sizes"><span>0.3л</span></div>
+              </div>
+              <div class="menu-item__price">160 ₽</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-cat-section">
+          <h2 class="menu-cat-title">Лимонады и Коктейли</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/mojito_classic.jpg" alt="Мохито" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Мохито Классический</div>
+                <div class="menu-item__desc">Свежая мята, лайм, лед и содовая</div>
+                <div class="menu-item__sizes"><span>0.5л</span></div>
+              </div>
+              <div class="menu-item__price">300 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/mojito_strawberry.jpg" alt="Мохито Клубничный" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Мохито Клубничный</div>
+                <div class="menu-item__desc">Спелая клубника, лайм, мята и искрящийся тоник</div>
+                <div class="menu-item__sizes"><span>0.5л</span></div>
+              </div>
+              <div class="menu-item__price">230 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/lemonade_mango.jpg" alt="Лимонад Манго-Маракуйя" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Лимонад Манго-Маракуйя</div>
+                <div class="menu-item__desc">Тропическое пюре манго и маракуйи с цитрусовым фрешем</div>
+                <div class="menu-item__sizes"><span>0.5л</span></div>
+              </div>
+              <div class="menu-item__price">230 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/lemonade_red_mary.jpg" alt="Лимонад Красная Мэри" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Лимонад Красная Мэри</div>
+                <div class="menu-item__desc">Яркий ягодный сбор со свежим розмарином и льдом</div>
+                <div class="menu-item__sizes"><span>0.5л</span></div>
+              </div>
+              <div class="menu-item__price">230 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/milkshake.jpg" alt="Молочный Коктейль" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Молочный Коктейль</div>
+                <div class="menu-item__desc">Пломбир, цельное молоко, натуральный сироп на выбор (ваниль / клубника / шоколад)</div>
+                <div class="menu-item__sizes"><span>0.4л</span></div>
+              </div>
+              <div class="menu-item__price">300 ₽</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- COFFEE -->
+      <div class="menu-cat menu-cat--hidden" id="cat-coffee">
+
+        <!-- Фирменный кофе -->
+        <div class="menu-cat-section">
+          <h2 class="menu-cat-title">Хит из Яндекс Карт</h2>
+          <div class="menu-items">
+            <div class="menu-item menu-item--featured">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/coffee_urbech.jpg" alt="Кофе с урбечом и мороженым" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Кофе с урбечом и мороженым <span class="menu-item__tag">Фирменный Хит</span></div>
+                <div class="menu-item__desc">Настоящий дагестанский урбеч, шарик сливочного пломбира и свежесваренный эспрессо. Неповторимый орехово-карамельный вкус!</div>
+                <div class="menu-item__sizes"><span>350мл</span></div>
+              </div>
+              <div class="menu-item__price">280 ₽</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-cat-section">
+          <h2 class="menu-cat-title">Классический Кофе</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/espresso.png" alt="Эспрессо" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Эспрессо</div>
+                <div class="menu-item__desc">Плотный шот свежеобжаренной халяль арабики с золотистой пенкой</div>
+                <div class="menu-item__sizes"><span>30мл — 150 ₽</span></div>
+              </div>
+              <div class="menu-item__price">150 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/americano.png" alt="Американо" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Американо</div>
+                <div class="menu-item__desc">Эспрессо с добавлением горячей воды</div>
+                <div class="menu-item__sizes"><span>200мл — 190 ₽</span></div>
+              </div>
+              <div class="menu-item__price">190 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/cappuccino.png" alt="Капучино" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Капучино</div>
+                <div class="menu-item__desc">Идеальный баланс эспрессо и бархатистой молочной пены</div>
+                <div class="menu-item__sizes"><span>200мл — 210 ₽</span><span>300мл — 250 ₽</span></div>
+              </div>
+              <div class="menu-item__price">от 210 ₽</div>
+            </div>
+
+            <div class="menu-item menu-item--featured">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/latte.png" alt="Латте" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Латте <span class="menu-item__tag">Популярный</span></div>
+                <div class="menu-item__desc">Нежный кофейно-молочный напиток с легкой пенкой</div>
+                <div class="menu-item__sizes"><span>200мл — 210 ₽</span><span>300мл — 250 ₽</span></div>
+              </div>
+              <div class="menu-item__price">от 210 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/flat_white.jpg" alt="Флэт Уайт" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Флэт Уайт</div>
+                <div class="menu-item__desc">Двойной эспрессо с тонким слоем взбитого молока для любителей насыщенного вкуса</div>
+                <div class="menu-item__sizes"><span>200мл — 250 ₽</span></div>
+              </div>
+              <div class="menu-item__price">250 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/cocoa.png" alt="Какао" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Какао с маршмеллоу</div>
+                <div class="menu-item__desc">Горячий шоколадный напиток с воздушным маршмеллоу</div>
+                <div class="menu-item__sizes"><span>300мл — 210 ₽</span></div>
+              </div>
+              <div class="menu-item__price">210 ₽</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-cat-section">
+          <h2 class="menu-cat-title">Холодный Кофе и Авторские Напитки</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/iced_latte.jpg" alt="Айс Латте" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Айс Латте</div>
+                <div class="menu-item__desc">Эспрессо, холодное молоко и кубики льда</div>
+                <div class="menu-item__sizes"><span>300мл</span></div>
+              </div>
+              <div class="menu-item__price">250 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/ruby_coffee.jpg" alt="Айс Кофе с Рубином" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Айс Кофе с Рубином</div>
+                <div class="menu-item__desc">Эспрессо-тоник с гранатовым кордиалом</div>
+                <div class="menu-item__sizes"><span>300мл</span></div>
+              </div>
+              <div class="menu-item__price">270 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/bumble.jpg" alt="Бамбл" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Бамбл Кофе</div>
+                <div class="menu-item__desc">Слоеный коктейль из эспрессо, свежевыжатого апельсинового сока и карамели</div>
+                <div class="menu-item__sizes"><span>300мл</span></div>
+              </div>
+              <div class="menu-item__price">320 ₽</div>
+            </div>
+
+            <div class="menu-item menu-item--featured">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/raf.jpg" alt="Раф Авторский" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Раф Авторский <span class="menu-item__tag">Нежный</span></div>
+                <div class="menu-item__desc">Взбитые сливки с эспрессо и ванильным сахаром</div>
+                <div class="menu-item__sizes"><span>300мл</span></div>
+              </div>
+              <div class="menu-item__price">250 ₽</div>
+            </div>
+
+            <div class="menu-item">
+              <div class="menu-item__img-wrap">
+                <img src="img/yandex/budilnik.jpg" alt="Будильник" class="menu-item__img" loading="lazy" />
+              </div>
+              <div class="menu-item__info">
+                <div class="menu-item__name">Будильник</div>
+                <div class="menu-item__desc">Тройной шот эспрессо, тростниковый сироп, корица и легкая сливочная пенка</div>
+                <div class="menu-item__sizes"><span>300мл</span></div>
+              </div>
+              <div class="menu-item__price">300 ₽</div>
+            </div>
+          </div>
+          <p class="menu-note">* Замена молока на растительное (овсяное, миндальное, кокосовое): +60 ₽</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/Главная" class="logo">
+          <div class="logo__text"><span class="logo__name">ХинкБери</span></div>
+        </a>
+        <p class="footer__tagline">Вкусно. Сытно. Для тебя.</p>
+      </div>
+      <nav class="footer__nav"><a href="/Главная">Главная</a><a href="/Меню">Меню</a><a href="/Главная#reviews">Отзывы</a><a href="/Главная#contacts">Контакты</a></nav>
+      <div class="footer__address"><small>Старокачаловская ул., вл5А, Москва</small></div>
+    </div>
+    <div class="footer__bottom"><div class="container"><span>© 2025 ХинкБери. Все права защищены.</span></div></div>
+  </footer>
+
+  </div><!-- /pageWrapper -->
+
+  <!-- AUTH MODAL (same as index) -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal" role="dialog">
+      <button class="modal__close" id="modalClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="modal__logo">
+        <span>ХинкБери</span>
+      </div>
+      <div class="modal__tabs"><button class="modal__tab modal__tab--active" data-tab="login">Вход</button><button class="modal__tab" data-tab="register">Регистрация</button></div>
+      <form class="auth-form" id="loginForm">
+        <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="your@email.com" id="loginEmail" required/></div>
+        <div class="form-group"><label class="form-label">Пароль</label><div class="form-input-wrap"><input type="password" class="form-input" placeholder="••••••••" id="loginPassword" required/><button type="button" class="form-input-eye" onclick="togglePassword('loginPassword',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
+        <button type="submit" class="btn btn--gold btn--full btn--lg">Войти</button>
+        <p class="form-hint">Нет аккаунта? <a href="#" class="form-link" data-switch="register">Зарегистрироваться (+100 Б)</a></p>
+      </form>
+      <form class="auth-form auth-form--hidden" id="registerForm">
+        <div class="form-group"><label class="form-label">Имя</label><input type="text" class="form-input" placeholder="Ваше имя" id="regName" required/></div>
+        <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="your@email.com" id="regEmail" required/></div>
+        <div class="form-group"><label class="form-label">Пароль</label><div class="form-input-wrap"><input type="password" class="form-input" placeholder="Минимум 6 символов" id="regPassword" required minlength="6"/><button type="button" class="form-input-eye" onclick="togglePassword('regPassword',this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
+        <button type="submit" class="btn btn--gold btn--full btn--lg">Создать аккаунт (+100 Б)</button>
+        <p class="form-hint">Уже есть аккаунт? <a href="#" class="form-link" data-switch="login">Войти</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- PROFILE MODAL -->
+  <div class="modal-overlay" id="profileModal">
+    <div class="modal modal--profile" role="dialog">
+      <button class="modal__close" id="profileClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="profile-header"><div class="profile-avatar" id="profileAvatar">А</div><div class="profile-info"><div class="profile-name" id="profileName">Имя</div><div class="profile-email" id="profileEmail">email</div></div></div>
+      <div class="profile-points-card">
+        <div class="profile-points-card__label">Ваши баллы</div>
+        <div class="profile-points-card__num" id="profilePoints">100</div>
+        <div class="profile-points-card__sub">5 ₽ = 1 балл · Дарим за каждый заказ</div>
+        <div class="profile-points-bar"><div class="profile-points-bar__fill" id="pointsBarFill" style="width:50%"></div></div>
+        <div class="profile-points-next">До следующего уровня: <span id="pointsToNext">100</span> баллов</div>
+      </div>
+      <div class="profile-history">
+        <div class="profile-history__title">История начислений</div>
+        <div class="profile-history__empty" id="historyEmpty">Посетите нас и получайте баллы!</div>
+        <ul class="profile-history__list" id="historyList"></ul>
+      </div>
+      <button class="btn btn--outline btn--full btn--md" id="logoutBtn">Выйти из аккаунта</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js?v=4.2"></script>
+</body>
+</html>
